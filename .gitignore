@@ -1,0 +1,3 @@
+.idea
+k8s/ebs-terraform/.terraform/*
+k8s/efs-terraform/.terraform/*

@@ -53,9 +53,11 @@ spec:
           limits:
             memory: 512Mi
       - name: testground-daemon
-        image: iptestground/testground:edge
+        image: iptestground/testground:sync-service
         imagePullPolicy: Always
         env:
+        - name: SYNC_SERVICE_HOST
+          value: "testground-sync-service-headless"
         - name: REDIS_HOST
           value: "testground-infra-redis-headless"
         securityContext:

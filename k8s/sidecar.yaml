@@ -35,7 +35,7 @@ spec:
           echo "redis-headless resolved."
       containers:
       - name: testground-sidecar
-        image: iptestground/sidecar:edge
+        image: iptestground/sidecar:no-redis
         imagePullPolicy: Always
         command: ["testground"]
         args: ["sidecar", "--runner", "k8s"]
@@ -44,6 +44,8 @@ spec:
             add: ["NET_ADMIN", "SYS_ADMIN", "SYS_TIME"]
           privileged: true
         env:
+        - name: SYNC_SERVICE_HOST
+          value: testground-sync-service-headless
         - name: REDIS_HOST
           value: "testground-infra-redis-headless"
         - name: INFLUXDB_HOST

@@ -1,0 +1,12 @@
+export CLUSTER_NAME=celestia.k8s.local
+export DEPLOYMENT_NAME=celestia
+export KOPS_STATE_STORE=s3://celestia-k8s
+export AWS_REGION=eu-west-1
+export ZONE_A=eu-west-1a
+export ZONE_B=eu-west-1b
+export WORKER_NODES=2
+export MASTER_NODE_TYPE=t3a.large
+export WORKER_NODE_TYPE=t3a.large
+export PUBKEY=$HOME/.ssh/id_rsa.pub
+export TEAM=devops
+export PROJECT=tester
